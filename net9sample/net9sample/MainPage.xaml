@@ -17,10 +17,13 @@
             <dataGrid:SfDataGrid 
                      Grid.Row="0"
                      x:Name="dataGrid"
+                     GroupingMode="Multiple"
+                     GroupCaptionTextFormat="{}{ColumnName}: {Key}"
                      BindingContext="{x:Reference viewModel}"
                      ItemsSource="{Binding Orders}">
 
                 <dataGrid:SfDataGrid.GroupColumnDescriptions>
+                    <dataGrid:GroupColumnDescription ColumnName="ShipCountry" DisplayName="Country" />
                     <dataGrid:GroupColumnDescription ColumnName="CustomerName" DisplayName="Name" />
                 </dataGrid:SfDataGrid.GroupColumnDescriptions>
 
