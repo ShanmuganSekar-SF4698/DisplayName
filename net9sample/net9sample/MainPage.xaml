@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:net9sample"
+             xmlns:dataGrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             x:Class="net9sample.MainPage">
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <dataGrid:SfDataGrid 
+                     Grid.Row="0"
+                     x:Name="dataGrid"
+                     BindingContext="{x:Reference viewModel}"
+                     ItemsSource="{Binding Orders}">
+
+                <dataGrid:SfDataGrid.GroupColumnDescriptions>
+                    <dataGrid:GroupColumnDescription ColumnName="CustomerName" DisplayName="Name" />
+                </dataGrid:SfDataGrid.GroupColumnDescriptions>
+
+            </dataGrid:SfDataGrid>
+
+        </Grid>
+        
+
+
+    </ContentPage.Content>
+
+
+</ContentPage>
